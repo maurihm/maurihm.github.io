@@ -1,0 +1,72 @@
+$pixel-bg: #fdfcff;
+$pixel-primary: #1b1b1f;
+$header-h: 64px;
+
+.pixel-header {
+  display: flex;
+  align-items: center;
+  justify-content: b;
+  padding: 0 24px;
+  height: $header-h;
+  background-color: $pixel-bg;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0; // Evita que el logo se aplaste
+
+    .pixel-logo {
+      width: 24px;
+      height: 24px;
+      background-color: #4285f4;
+      border-radius: 6px;
+    }
+
+    .app-title {
+      font-size: 20px;
+      font-weight: 500;
+      color: $pixel-primary;
+    }
+  }
+
+  .spacer {
+    flex: 1; // Esto es vital: ocupa todo el espacio sobrante en medio
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 8px; // Espacio entre la campana y el avatar
+    flex-shrink: 0;
+
+    .pixel-icon-btn {
+      background: none;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      
+      &:hover { background-color: rgba(0,0,0,0.04); }
+    }
+
+    .pixel-avatar {
+      margin-left: 4px;
+      .avatar-circle {
+        width: 36px;
+        height: 36px;
+        background-color: #6200ee; // El morado de tu captura
+        color: white;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
+  }
+}
