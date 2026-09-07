@@ -3,4 +3,5 @@ export class Certificate {
   name?: string;
   organization?: string;
   date?: string;
+  url?: string;
 }

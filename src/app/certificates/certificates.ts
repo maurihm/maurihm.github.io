@@ -29,7 +29,23 @@ export class CertificatesComponent implements OnInit {
     ).subscribe({
       next: (data) => {
         console.log('CertificatesComponent data received:', data);
-        this.certificatesList = data;
+        
+        const kaggleCerts: Certificate[] = [
+          {
+            name: 'Python',
+            organization: 'Kaggle',
+            date: '2024',
+            url: 'https://raw.githubusercontent.com/maurihm/python-course/refs/heads/main/Mauricio%20Hern%C3%A1ndez%20Mart%C3%ADnez%20-%20Python.png'
+          },
+          {
+            name: 'Pandas',
+            organization: 'Kaggle',
+            date: '2024',
+            url: 'https://raw.githubusercontent.com/maurihm/pandas-course/refs/heads/main/Mauricio%20Hern%C3%A1ndez%20Mart%C3%ADnez%20-%20Pandas.png'
+          }
+        ];
+        
+        this.certificatesList = [...data, ...kaggleCerts];
         this.cdr.detectChanges();
       },
       error: (err) => console.error('CertificatesComponent error retrieving data:', err)

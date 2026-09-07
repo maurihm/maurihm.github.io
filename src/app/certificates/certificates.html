@@ -4,7 +4,8 @@
   <div *ngIf="certificatesList.length > 0; else noData">
     <ul *ngFor="let cert of certificatesList" class="certificate-item">
       <li>
-        <h3>{{ cert.name }}</h3>
+        <h3 *ngIf="cert.url"><a [href]="cert.url" target="_blank">{{ cert.name }}</a></h3>
+        <h3 *ngIf="!cert.url">{{ cert.name }}</h3>
         <p><strong>{{ cert.organization }}</strong> - {{ cert.date }}</p>
       </li>
     </ul>
